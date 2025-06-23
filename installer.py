@@ -7,8 +7,6 @@ import urllib.request
 from config import Config
 import json
 from requests import get
-import sys
-from tkinter import messagebox
 
 
 class Installer:
@@ -93,7 +91,6 @@ class Installer:
         except ConnectionError:
             messagebox.showerror("Connection error", "No connection to server.\nCheck your internet connection")
             sys.exit(1)
-
         
     def save_game_config(self):
         config_file = path.expanduser(f'~/.{Config.GAME_NAME}.config.json')

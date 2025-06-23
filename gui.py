@@ -259,12 +259,10 @@ class App(CTk):
         return available_space
 
     def check_enough_space(self):
-        # file_size = self.get_file_size(Config.GAME_DOWNLOAD_URL)
-        # disk_free = self.get_available_disk_space()
-        # not_enough = (file_size - disk_free) / (1024 ** 2)
-        # return not_enough
-        return -100
-        #del
+        file_size = self.get_file_size(Config.GAME_DOWNLOAD_URL)
+        disk_free = self.get_available_disk_space()
+        not_enough = (file_size - disk_free) / (1024 ** 2)
+        return not_enough
 
     def get_game_path(self):
         game_path = path.join(self.installed_game_path, Config.EXE_NAME)
